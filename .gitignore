@@ -1,0 +1,4 @@
+*~
+*.swp
+env_circuits/
+*.pyc
