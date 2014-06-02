@@ -16,7 +16,12 @@ class Technology:
         self.circuit = circuit
 
     def __eq__(self, other):
-        pass
+        if len(self.circuit) != len(other.circuit):
+            return False
+        return all([a is b for a, b in zip(self.circuit, other.circuit)])
+
+    def satisfies(self, goal):
+        return self == goal
 
     def better_than(self, other, goal):
         return self.score(goal) > other.score(goal)

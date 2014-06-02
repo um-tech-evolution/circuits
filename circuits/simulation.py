@@ -36,15 +36,16 @@ class Community:
 
     def satisfies_goal(self, tech):
         '''
-        Return the goal satisfied by `tech` or `None`.
+        Return the goal best (most closely) satisfied by `tech`.
         '''
         pass
 
     def add_technology(self, tech):
         '''
-        If `tech` is superior to an existing technology, replace and return the
-        existing technology. Return `None` otherwise.
+        If `tech` is superior to an existing technology at satisfying a goal,
+        replace and return the existing technology. Return `None` otherwise.
         '''
+        pass
 
     def already_known(self, tech):
         '''
