@@ -3,7 +3,8 @@ simulation.py
 Primary building blocks for simulations based on the circuit model.
 '''
 
-from .primitives import One, Zero
+
+from .primitives import ONE, ZERO, NAND, AND, OR, XOR
 
 
 class Community:
@@ -20,8 +21,8 @@ class Community:
     def __init__(self, goals=None, technologies=None, primitives=None):
         self._goals = goals or []
         self._technologies = technologies or []
-        self._primitives = primitives or []
-        self._constants = [One(), Zero()]
+        self._primitives = primitives or [NAND, AND, OR, XOR]
+        self._constants = [ONE, ZERO]
 
     def attempt_invention(self):
         '''
