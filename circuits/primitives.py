@@ -6,6 +6,7 @@ Primitive logic circuit technologies.
 
 from .technology import Technology
 from .variables import X
+from pyeda.boolalg.bdd import BDDONE, BDDZERO
 
 
 class Nand(Technology):
@@ -26,3 +27,13 @@ class Or(Technology):
 class Xor(Technology):
     def __init__(self):
         super(Xor, self).__init__('XOR', [X[0] ^ X[1]])
+
+
+class One(Technology):
+    def __init__(self):
+        super(One, self).__init__('ONE', [BDDONE])
+
+
+class Zero(Technology):
+    def __init__(self):
+        super(Zero, self).__init__('ZERO', [BDDZERO])

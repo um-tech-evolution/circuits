@@ -3,8 +3,7 @@ simulation.py
 Primary building blocks for simulations based on the circuit model.
 '''
 
-
-from pyeda.boolalg.bdd import BDDONE, BDDZERO
+from .primitives import One, Zero
 
 
 class Community:
@@ -22,7 +21,7 @@ class Community:
         self._goals = goals or []
         self._technologies = technologies or []
         self._primitives = primitives or []
-        self._constants = [BDDONE, BDDZERO]
+        self._constants = [One(), Zero()]
 
     def attempt_invention(self):
         '''
