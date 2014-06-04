@@ -15,13 +15,11 @@ class Technology:
         self.name = name
         self.circuit = circuit
 
-    def __eq__(self, other):
-        if len(self.circuit) != len(other.circuit):
-            return False
-        return all([a is b for a, b in zip(self.circuit, other.circuit)])
-
     def satisfies(self, goal):
-        return self == goal
+        '''
+        Determine whether this instances exactly implements a goal tech.
+        '''
+        return self.distance_from(goal) == 0
 
     def better_than(self, other, goal):
         return self.score(goal) > other.score(goal)
