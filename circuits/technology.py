@@ -41,4 +41,9 @@ class Technology:
         '''
         pass
 
+    def combined_with(self, other):
+        '''
+        Combine with another `Technology` instance and return the resulting,
+        new tech.
+        '''
         pass
