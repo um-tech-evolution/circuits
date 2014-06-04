@@ -11,9 +11,10 @@ class Technology:
     the goal.
     '''
 
-    def __init__(self, name, circuit):
+    def __init__(self, name, circuit, cost):
         self.name = name
         self.circuit = circuit
+        self.cost = cost
 
     def satisfies(self, goal):
         '''
@@ -22,7 +23,16 @@ class Technology:
         return self.distance_from(goal) == 0
 
     def better_than(self, other, goal):
-        return self.score(goal) > other.score(goal)
+        '''
+        Determine whether this instance approximates a goal tech better than
+        some other `Technology` instance.
+        '''
+        own_dist = self.distance_from(goal)
+        other_dist = other.distance_from(goal)
+        if own_dist != other_dist:
+            return own_dist < other_dist
+        return self.cost < other.cost
+
     def distance_from(self, goal):
         '''
         Distance is the number of possible inputs for which the output of the
@@ -31,5 +41,4 @@ class Technology:
         '''
         pass
 
-    def score(self, goal):
         pass
