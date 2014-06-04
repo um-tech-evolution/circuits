@@ -25,6 +25,13 @@ class Technology:
 
     def better_than(self, other, goal):
         return self.score(goal) > other.score(goal)
+    def distance_from(self, goal):
+        '''
+        Distance is the number of possible inputs for which the output of the
+        circuit differs from that of the goal circuit. Smaller values are
+        better.
+        '''
+        pass
 
     def score(self, goal):
         pass
