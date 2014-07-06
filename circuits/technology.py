@@ -17,7 +17,7 @@ class Technology:
     @param circuit - a function array
     @param cost - the cost of the circuit
     '''
-    def __init__(self, name, circuit, cost):
+    def __init__(self, name, circuit, cost=0):
         self.name = name
         self.circuit = circuit
         self.cost = cost
