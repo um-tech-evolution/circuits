@@ -1,6 +1,8 @@
 from distutils.core import setup
+import os
 
-VERSION = open('VERSION', 'r').read().strip()
+DIRNAME = os.path.dirname(os.path.realpath(__file__))
+VERSION = open(os.path.join(DIRNAME, 'VERSION'), 'r').read().strip()
 
 setup(
     name='circuits',
