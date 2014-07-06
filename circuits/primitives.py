@@ -7,36 +7,37 @@ Primitive logic circuit technologies.
 from .technology import Technology
 from .variables import X
 from pyeda.boolalg.bdd import BDDONE, BDDZERO
+from pyeda.inter import farray
 
 
 class _Nand(Technology):
     def __init__(self):
-        super(Nand, self).__init__('NAND', [~(X[0] & X[1])])
+        super(_Nand, self).__init__('NAND', farray([~(X[0] & X[1])]))
 
 
 class _And(Technology):
     def __init__(self):
-        super(And, self).__init__('AND', [X[0] & X[1]])
+        super(_And, self).__init__('AND', farray([X[0] & X[1]]))
 
 
 class _Or(Technology):
     def __init__(self):
-        super(Or, self).__init__('OR', [X[0] | X[1]])
+        super(_Or, self).__init__('OR', farray([X[0] | X[1]]))
 
 
 class _Xor(Technology):
     def __init__(self):
-        super(Xor, self).__init__('XOR', [X[0] ^ X[1]])
+        super(_Xor, self).__init__('XOR', farray([X[0] ^ X[1]]))
 
 
 class _One(Technology):
     def __init__(self):
-        super(One, self).__init__('ONE', [BDDONE])
+        super(_One, self).__init__('ONE', farray([BDDONE]))
 
 
 class _Zero(Technology):
     def __init__(self):
-        super(Zero, self).__init__('ZERO', [BDDZERO])
+        super(_Zero, self).__init__('ZERO', farray([BDDZERO]))
 
 
 NAND = _Nand()
