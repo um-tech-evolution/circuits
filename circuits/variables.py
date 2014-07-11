@@ -4,7 +4,7 @@ Shared set of boolean variables for use in all technologies.
 '''
 
 
-from pyeda.boolalg.bdd import bddvars
+from pyeda.inter import bddvars
 
 
 # The number of total variables that will be allocated. Set to 16 based on the
