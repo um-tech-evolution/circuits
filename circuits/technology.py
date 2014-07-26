@@ -63,7 +63,9 @@ class Technology:
     def combined_with(self, other):
         '''
         Combine with another `Technology` instance and return the resulting,
-        new tech.
+        new tech. Note that this operation is NOT commutative. In other words,
+        `a.combined_with(b)` does NOT do the same thing as
+        `b.combined_with(a)`, even if you set the PRNG seed.
 
         @param other - another technology with which to combine
         '''
