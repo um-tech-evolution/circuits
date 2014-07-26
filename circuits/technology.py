@@ -75,7 +75,7 @@ class Technology:
             other_exprs = [expr.compose({other_input: self_output}) for expr in other_exprs]
         self_exprs = list(self.circuit)
 
-        new_name = '{} + {}'.format(self.name, other.name) # TODO Come up with name algorithm
+        new_name = '({} + {})'.format(self.name, other.name) # TODO Come up with name algorithm
         new_circuit = farray(self_exprs + other_exprs)
         new_cost = self.cost + other.cost # FIXME Compute cost according to A&P
 
