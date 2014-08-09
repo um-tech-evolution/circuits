@@ -1,3 +1,5 @@
+![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest)
+
 # Circuits
 
 A Python program and library that allows the simulation of technological
