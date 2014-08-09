@@ -5,6 +5,8 @@ Technology abstraction classes and functions.
 from random import random, choice
 from pyeda.inter import farray
 from .constants import INPUT_PROBABILITY
+from .variables import X
+from .bitstring import bitrange
 
 
 class Technology:
@@ -48,11 +50,32 @@ class Technology:
         '''
         Distance is the number of possible inputs for which the output of the
         technology circuit differs from that of the goal technology. Smaller
-        values are better.
+        values indicate technologies that are closer in functionality.
+
+        Basically, this is the number of identical rows in the truth tables of
+        the respective truth tables.
 
         @param goal - the goal technology to compare against
         '''
-        pass
+        if self.circuit == goal.circuit:
+            return 0
+
+        goal_inputs = goal.inputs()
+        self_inputs = self.inputs()
+        inputs = goal_inputs.union(self_inputs)
+
+        distance = 0
+        for bs in bitrange(len(inputs)):
+            bindings = {x: b for x, b in zip(inputs, bs)}
+            # Reverse the outputs so that we compare right-to-left. In other
+            # words, 1101 should equal 101.
+            # TODO Evaluate whether the above values should be equal or not
+            self_values = reversed(self.circuit.vrestrict(bindings))
+            goal_values = reversed(goal.circuit.vrestrict(bindings))
+            distance += int(not all(s == g for s, g in zip(self_values, goal_values)))
+
+        return distance
+
 
     def inputs(self):
         '''
