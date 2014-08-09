@@ -1,5 +1,7 @@
 '''
-technology.py
+technology
+~~~~~~~~~~
+
 Technology abstraction classes and functions.
 '''
 from random import random, choice
@@ -15,9 +17,9 @@ class Technology:
     technologies for equality and, given a goal, closeness of approximation of
     the goal.
 
-    @param name - the name of the circuit
-    @param circuit - a function array
-    @param cost - the cost of the circuit
+    :param name: the name of the circuit
+    :param circuit: a function array
+    :param cost: the cost of the circuit
     '''
     def __init__(self, name, circuit, cost=0):
         self.name = name
@@ -28,7 +30,7 @@ class Technology:
         '''
         Determine whether this instances exactly implements a goal tech.
 
-        @param goal - the goal to compare against
+        :param goal: the goal to compare against
         '''
         return self.distance_from(goal) == 0
 
@@ -37,8 +39,8 @@ class Technology:
         Determine whether this instance approximates a goal tech better than
         some other `Technology` instance.
 
-        @param other - another technology to compare against
-        @param goal - the goal to compare both against
+        :param other: another technology to compare against
+        :param goal: the goal to compare both against
         '''
         own_dist = self.distance_from(goal)
         other_dist = other.distance_from(goal)
@@ -55,7 +57,15 @@ class Technology:
         Basically, this is the number of identical rows in the truth tables of
         the respective truth tables.
 
-        @param goal - the goal technology to compare against
+        Note that, for now, we compare right-to-left and ignore extra bits if
+        one bit string is longer than the other. So, for example, a circuit
+        that outputs 1101 for a given set of inputs will be considered equal to
+        another circuit for that set of values if the other circuit evaluates
+        to 101.
+
+        .. todo:: Evaluate how to compare bit strings of unequal lengths.
+
+        :param goal: the goal technology to compare against
         '''
         if self.circuit == goal.circuit:
             return 0
@@ -89,7 +99,7 @@ class Technology:
         `a.combined_with(b)` does NOT do the same thing as
         `b.combined_with(a)`, even if you set the PRNG seed.
 
-        @param other - another technology with which to combine
+        :param other: another technology with which to combine
         '''
         other_exprs = list(other.circuit)
         for other_input in other.inputs():

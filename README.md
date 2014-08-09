@@ -1,4 +1,5 @@
 ![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
+![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest>)
 
 # Circuits
 
@@ -12,3 +13,7 @@ simulation of the role of social communication in technological innovation.
 
 [1] W. Arthur and W. Polak, “The evolution of technology within a simple
 computer model,” Complexity, vol. 11, no. 5, pp. 23–31, 2006.
+
+## Documentation
+
+[Documentation](http://evolutionary-circuits.readthedocs.org/en/latest/)

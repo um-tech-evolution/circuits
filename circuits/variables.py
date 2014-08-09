@@ -1,6 +1,14 @@
 '''
-variables.py
-Shared set of boolean variables for use in all technologies.
+variables
+~~~~~~~~~
+
+Shared set of boolean variables for use in all technologies. Two special
+constants are exported.
+
+`X` is the vector of BDD variables that are available for use in all circuits.
+These can be used, once imported, by indexing `X` like a list: ``X[0]``, etc.
+
+`N` is the length of the `X` vector.
 '''
 
 
@@ -23,6 +31,9 @@ def evaluated_at(circuit, bitstring):
     returns the resulting bitstring. The input and output bitstrings will be
     lists of `0` and `1`. If the input bitstring is shorter than `N`, it will
     be padded to the right with zeroes.
+
+    :param circuit: the boolean circuit to evaluate
+    :param bitstring: a list of `0` and `1` integers
     '''
     if len(bitstring) < N:
         inbits = bitstring + [0] * (N - len(bitstring))
