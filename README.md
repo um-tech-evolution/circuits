@@ -1,4 +1,4 @@
-![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest)
+[<https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest>](http://evolutionary-circuits.readthedocs.org/en/latest/)
 
 # Circuits
 
