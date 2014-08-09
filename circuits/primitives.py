@@ -1,6 +1,17 @@
 '''
-primitives.py
+primitives
+~~~~~~~~~~
+
 Primitive logic circuit technologies.
+
+The follow primitive technologies are available here:
+
+  * `NAND`
+  * `AND`
+  * `OR`
+  * `XOR`
+  * `ONE` (binary 1)
+  * `ZERO` (binary 0)
 '''
 
 

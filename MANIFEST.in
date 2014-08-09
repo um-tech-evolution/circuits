@@ -1,2 +1,2 @@
 include README.md
-recursive-include docs *.html *.css *.png *.jpg *.pdf
+recursive-include docs/build *.html *.css *.png *.jpg *.pdf

@@ -1,4 +1,7 @@
 """
+constants
+~~~~~~~~~
+
 Simulation constants. Some of these will move to configuration files or command
 line arguments at some point.
 """

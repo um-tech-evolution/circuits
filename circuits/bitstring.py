@@ -1,5 +1,6 @@
 '''
-bitstring.py
+bitstring
+~~~~~~~~~
 
 Utilities for dealing with bit strings.
 '''
@@ -9,7 +10,7 @@ def increment(bs):
     '''
     Increments the given bit string.
 
-    @param bs - a bit string (list of integers)
+    :param bs: a bit string (list of integers)
     '''
     c = 1
     obs = []
@@ -28,7 +29,7 @@ def bitrange(length):
     '''
     Produces all possible bit strings up to the given length.
 
-    @param length - the maximum length bit string to produce
+    :param length: the maximum length bit string to produce
     '''
     bs = [0] * length
     while len(bs) == length:
