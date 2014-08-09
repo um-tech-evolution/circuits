@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
+
 # Circuits
 
 A Python program and library that allows the simulation of technological
