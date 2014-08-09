@@ -76,7 +76,6 @@ class Technology:
 
         return distance
 
-
     def inputs(self):
         '''
         Return a Python set of the inputs of the circuit.
