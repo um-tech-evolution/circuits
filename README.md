@@ -1,3 +1,4 @@
+![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
 ![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest>)
 
 # Circuits
