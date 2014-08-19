@@ -24,9 +24,11 @@ hosted over at Read The Docs and is automatically built on each commit.
 ![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
 
 There is a suite of unit tests in the `test` directory. They use both standard
-Python tests and Nose-style tests, so it is best to use Nose to run them. This
-can be done with the following command (once the `nose` package is installed):
+Python tests and Nose-style tests, so it is best to use Nose to run them.
+Additionally, some of the simpler functions only have doc tests, these can be
+run very simple with Nose, just add the `--with-doctest` flag. This can be done
+with the following command (once the `nose` package is installed):
 
 ```
-$ nosetests
+$ nosetests --with-doctest
 ```
