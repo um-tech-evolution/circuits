@@ -1,5 +1,3 @@
-![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
-![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest>)
 
 # Circuits
 
@@ -16,4 +14,19 @@ computer model,” Complexity, vol. 11, no. 5, pp. 23–31, 2006.
 
 ## Documentation
 
-[Documentation](http://evolutionary-circuits.readthedocs.org/en/latest/)
+![Docs](https://readthedocs.org/projects/evolutionary-circuits/badge/?version=latest>)
+
+The [documentation](http://evolutionary-circuits.readthedocs.org/en/latest/) is
+hosted over at Read The Docs and is automatically built on each commit.
+
+## Tests
+
+![Build Status](https://travis-ci.org/um-tech-evolution/circuits.svg?branch=master)
+
+There is a suite of unit tests in the `test` directory. They use both standard
+Python tests and Nose-style tests, so it is best to use Nose to run them. This
+can be done with the following command (once the `nose` package is installed):
+
+```
+$ nosetests
+```
